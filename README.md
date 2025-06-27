@@ -39,3 +39,27 @@ Originally made for educational and stress-testing purposes, this bot demonstrat
    git clone https://github.com/yourusername/afu-nuker.git
    cd afu-nuker
    
+
+ 2. **Install dependencies**:
+   ```bash
+pip install -r requirements.txt
+```
+
+3.	**Edit config.json with your own bot token and desired spam content**:
+   ```json
+{
+  "TOKEN": "YOUR_DISCORD_BOT_TOKEN",
+  "MESSAGE": "🔥 United x Uprising owns this server 🔥",
+  "CHANNELNAMES": "uprising-channel",
+  "PREFIX": "!",
+  "ROLENAME": "owned-role",
+  "SERVERNAME": "🔥 Server Nuked by AFU 🔥"
+} 
+``` 
+
+4. **Run the bot**:
+   ```bash
+   python main.py
+   ```
+
+   
