@@ -22,7 +22,7 @@ lr = Fore.LIGHTRED_EX
 
 
 def menu():
-    ctypes.windll.kernel32.SetConsoleTitleW("AFU Nuke Bot v1 | United X Uprising")
+    ctypes.windll.kernel32.SetConsoleTitleW("AFU Nuke Bot v1 | ANTI-FURRIES UNITED")
       
     Write.Print(" .----------------.  .----------------.  .----------------.\n", Colors.light_blue, interval=0.000)
     Write.Print("| .--------------. || .--------------. || .--------------. |\n", Colors.purple_to_red, interval=0.000)
